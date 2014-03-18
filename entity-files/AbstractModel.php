@@ -6,6 +6,25 @@
 class AbstractModel
 {
     /**
+     * Função que realiza a população dos registros nas tabelas.
+     *
+     * @param null $data
+     */
+    public function __construct($data = null)
+    {
+        if (null !== $data) {
+            foreach ($data as $k => $v) {
+                if (substr($k, -3) == '_id') {
+                    $table  = ucfirst(substr($k, 0, -3));
+                    $method = "set$table";
+                    $this->{$method}($table::find($v));
+                }
+                $this->{$k} = $v;
+            }
+        }
+    }
+
+    /**
      * Busca um registro na tabela tendo como base o parâmetro id
      *
      * @param $id
