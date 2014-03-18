@@ -87,5 +87,5 @@ class Grupos extends AbstractModel
     {
         return $this->descricao;
     }
-    
+
 }
