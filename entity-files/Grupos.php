@@ -31,7 +31,7 @@ class Grupos extends AbstractModel
     /**
      * Atribui valor para a coluna id
      *
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -41,7 +41,7 @@ class Grupos extends AbstractModel
     /**
      * Obtém a coluna id
      *
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
