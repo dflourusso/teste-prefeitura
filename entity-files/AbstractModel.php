@@ -71,4 +71,15 @@ class AbstractModel
         return $data;
     }
 
+    /**
+     * Retorna uma string imprimível com o nome da tabela e os dados do registro.
+     * @return string
+     */
+    public function __toString()
+    {
+        $lista = get_called_class().':: ';
+        $lista .= var_export($this->toArray(), true);
+
+        return $lista;
+    }
 }
