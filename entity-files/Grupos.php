@@ -28,4 +28,64 @@ class Grupos extends AbstractModel
      */
     protected $descricao;
 
+    /**
+     * Atribui valor para a coluna id
+     *
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Obtém a coluna id
+     *
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Atribui valor para a coluna datcad
+     *
+     * @param DateTime $datcad
+     */
+    public function setDatcad($datcad)
+    {
+        $this->datcad = $datcad;
+    }
+
+    /**
+     * Obtém a coluna datcad
+     *
+     * @return DateTime
+     */
+    public function getDatcad()
+    {
+        return $this->datcad;
+    }
+
+    /**
+     * Atribui valor para a coluna descrição
+     *
+     * @param string $descricao
+     */
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+    }
+
+    /**
+     * Obtém a coluna descricao
+     *
+     * @return string
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+    
 }
