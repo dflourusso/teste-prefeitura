@@ -20,4 +20,13 @@ class AbstractModel
 
         return EM::instance()->find(get_called_class(), $id);
     }
+
+    /**
+     * Salva a instância do objeto
+     */
+    public function save()
+    {
+        EM::instance()->persist($this);
+        EM::instance()->flush($this);
+    }
 }
