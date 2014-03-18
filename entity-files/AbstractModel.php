@@ -57,4 +57,18 @@ class AbstractModel
         EM::instance()->remove($this);
         EM::instance()->flush($this);
     }
+
+    /**
+     * Retorna um array contendo as propriedades e valores da tabela/registro.
+     * @return array
+     */
+    public function toArray()
+    {
+        $data = array();
+        foreach ($this as $k => $v) {
+            $data[$k] = $v;
+        }
+        return $data;
+    }
+
 }
