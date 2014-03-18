@@ -29,4 +29,13 @@ class AbstractModel
         EM::instance()->persist($this);
         EM::instance()->flush($this);
     }
+
+    /**
+     * Apaga o registro do objeto instanciado
+     */
+    public function delete()
+    {
+        EM::instance()->remove($this);
+        EM::instance()->flush($this);
+    }
 }
