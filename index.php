@@ -6,5 +6,6 @@ require_once 'bootstrap.php';
 $grupo = new Grupos();
 $grupo->setDescricao('Alimentos');
 $grupo->setDatcad(new DateTime());
+$grupo->save();
 
 echo $grupo;
