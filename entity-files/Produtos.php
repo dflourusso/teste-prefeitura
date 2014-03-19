@@ -164,4 +164,15 @@ class Produtos extends AbstractModel
         return $this->preco;
     }
 
+    /**
+     * Retorna uma instancia do Produto
+     * @param int $id
+     *
+     * @return Produtos
+     */
+    public static function find($id)
+    {
+        parent::find($id);
+    }
+
 } 
