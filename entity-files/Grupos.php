@@ -90,6 +90,7 @@ class Grupos extends AbstractModel
 
     /**
      * Retorna uma instancia do Grupo
+     *
      * @param int $id
      *
      * @return Grupos

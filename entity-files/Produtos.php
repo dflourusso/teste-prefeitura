@@ -166,6 +166,7 @@ class Produtos extends AbstractModel
 
     /**
      * Retorna uma instancia do Produto
+     *
      * @param int $id
      *
      * @return Produtos
