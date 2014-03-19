@@ -49,6 +49,15 @@ class AbstractModel
         EM::instance()->flush($this);
     }
 
+
+    /**
+     * Salva a instância do objeto
+     */
+    public function refresh()
+    {
+        EM::instance()->refresh($this);
+    }
+
     /**
      * Apaga o registro do objeto instanciado
      */
