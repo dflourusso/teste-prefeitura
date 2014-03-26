@@ -1,5 +1,7 @@
 <?php
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Class Fornecedores
  *
@@ -21,6 +23,21 @@ class Fornecedores extends AbstractModel
      * @Column(type="string", length=70, nullable=true)
      */
     protected $nomraz;
+
+    /**
+     * @ManyToMany(targetEntity="Produtos", mappedBy="fornecedores")
+     */
+    private $produtos;
+
+    /**
+     * Obtem a lista de entidades (Produtos)
+     *
+     * @return ArrayCollection
+     */
+    public function getProdutos()
+    {
+        return $this->produtos;
+    }
 
     /**
      * Atribui valor para a propriedade id
@@ -56,6 +73,18 @@ class Fornecedores extends AbstractModel
     public function getNomraz()
     {
         return $this->nomraz;
+    }
+
+    /**
+     * Retorna uma instancia do Fornecedor
+     *
+     * @param int $id
+     *
+     * @return Fornecedores
+     */
+    public static function find($id)
+    {
+        return parent::find($id);
     }
 
 } 

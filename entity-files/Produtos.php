@@ -1,5 +1,7 @@
 <?php
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Class Produtos
  *
@@ -43,6 +45,26 @@ class Produtos extends AbstractModel
      * @JoinColumn(name="grupo_id", referencedColumnName="id")
      */
     private $grupo;
+
+    /**
+     * @ManyToMany(targetEntity="Fornecedores", inversedBy="produtos")
+     * @JoinTable(name="fornecedores_produtos",
+     *      joinColumns={@JoinColumn(name="produto_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="fornecedor_id", referencedColumnName="id")}
+     *      )
+     * @OrderBy({"id" = "DESC"})
+     */
+    private $fornecedores;
+
+    /**
+     * Obtem a lista de entidades (Fornecedores)
+     *
+     * @return ArrayCollection
+     */
+    public function getFornecedores()
+    {
+        return $this->fornecedores;
+    }
 
     /**
      * Atribui valor para a propriedade datcad
