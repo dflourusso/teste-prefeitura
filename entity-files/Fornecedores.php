@@ -2,6 +2,9 @@
 
 /**
  * Class Fornecedores
+ *
+ * @Entity
+ * @Table(name="fornecedores")
  */
 class Fornecedores extends AbstractModel
 {
