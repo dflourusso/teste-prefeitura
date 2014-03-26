@@ -30,6 +30,14 @@ class Fornecedores extends AbstractModel
     private $produtos;
 
     /**
+     * Inicia a propriedade produtos
+     */
+    public function init()
+    {
+        $this->produtos = new ArrayCollection();
+    }
+
+    /**
      * Obtem a lista de entidades (Produtos)
      *
      * @return ArrayCollection
@@ -41,6 +49,7 @@ class Fornecedores extends AbstractModel
 
     /**
      * Atribui valor para a propriedade id
+     *
      * @param int $id
      */
     public function setId($id)
@@ -50,6 +59,7 @@ class Fornecedores extends AbstractModel
 
     /**
      * Obtém o valor da propriedade id
+     *
      * @return int
      */
     public function getId()
@@ -59,6 +69,7 @@ class Fornecedores extends AbstractModel
 
     /**
      * Atribui valor para a propriedade nomraz
+     *
      * @param string $nomraz
      */
     public function setNomraz($nomraz)
@@ -68,6 +79,7 @@ class Fornecedores extends AbstractModel
 
     /**
      * Obtém o valor da propriedade nomraz
+     *
      * @return string
      */
     public function getNomraz()
