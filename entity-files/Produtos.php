@@ -41,7 +41,7 @@ class Produtos extends AbstractModel
     protected $grupo_id;
 
     /**
-     * @ManyToOne(targetEntity="Grupos")
+     * @ManyToOne(targetEntity="Grupos", inversedBy="produtos")
      * @JoinColumn(name="grupo_id", referencedColumnName="id")
      */
     private $grupo;
