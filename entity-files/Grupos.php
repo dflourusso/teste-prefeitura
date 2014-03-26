@@ -1,5 +1,7 @@
 <?php
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Class Grupos
  *
@@ -27,6 +29,24 @@ class Grupos extends AbstractModel
      * @Column(type="string", length=100, nullable=true)
      */
     protected $descricao;
+
+    /**
+     * @OneToMany(targetEntity="Produtos", mappedBy="grupo")
+     **/
+    private $produtos;
+
+    public function init()
+    {
+        $this->produtos = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProdutos()
+    {
+        return $this->produtos;
+    }
 
     /**
      * Atribui valor para a coluna id
