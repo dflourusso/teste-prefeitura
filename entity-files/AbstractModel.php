@@ -22,7 +22,10 @@ class AbstractModel
                 $this->{$k} = $v;
             }
         }
+        $this->init();
     }
+
+    public function init(){}
 
     /**
      * Busca um registro na tabela tendo como base o parâmetro id
