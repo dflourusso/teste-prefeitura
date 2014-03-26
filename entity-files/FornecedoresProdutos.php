@@ -3,7 +3,7 @@
 /**
  * Class FornecedoresProdutos
  */
-class FornecedoresProdutos
+class FornecedoresProdutos extends AbstractModel
 {
     /**
      * Primary Key column.
