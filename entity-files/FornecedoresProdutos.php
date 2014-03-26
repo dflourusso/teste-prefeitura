@@ -2,9 +2,10 @@
 
 /**
  * Class FornecedoresProdutos
+ * Tabela de ligação dos fornecedores com os produtos
  *
  * @Entity
- * @Table(name="fornecedoresprodutos")
+ * @Table(name="fornecedores_produtos")
  */
 class FornecedoresProdutos extends AbstractModel
 {

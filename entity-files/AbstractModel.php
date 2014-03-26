@@ -15,7 +15,7 @@ class AbstractModel
         if (null !== $data) {
             foreach ($data as $k => $v) {
                 if (substr($k, -3) == '_id') {
-                    $table  = ucfirst(substr($k, 0, -3));
+                    $table  = ucfirst(substr($k, 0, -3)) . 's';
                     $method = "set$table";
                     $this->{$method}($table::find($v));
                 }
