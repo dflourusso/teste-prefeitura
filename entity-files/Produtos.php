@@ -173,7 +173,7 @@ class Produtos extends AbstractModel
      */
     public static function find($id)
     {
-        parent::find($id);
+        return parent::find($id);
     }
 
 } 
