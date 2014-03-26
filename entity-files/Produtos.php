@@ -57,6 +57,14 @@ class Produtos extends AbstractModel
     private $fornecedores;
 
     /**
+     * Inicia a propriedade fornecedores
+     */
+    public function init()
+    {
+        $this->fornecedores = new ArrayCollection();
+    }
+
+    /**
      * Obtem a lista de entidades (Fornecedores)
      *
      * @return ArrayCollection
