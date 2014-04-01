@@ -44,6 +44,16 @@ class AbstractModel
     }
 
     /**
+     * Retorna todos os registros de uma tabela
+     *
+     * @return array
+     */
+    public static function findAll()
+    {
+        return EM::instance()->getRepository(get_called_class())->findAll();
+    }
+
+    /**
      * Salva a instância do objeto
      */
     public function save()
