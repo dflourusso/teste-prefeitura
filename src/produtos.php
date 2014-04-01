@@ -1,7 +1,6 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
-$qb->select('p')->from('Produtos', 'p')
-    ->where($qb->expr()->between('p.id', 7, 9));
+$qb->select($qb->expr()->countDistinct('p.grupo_id'))->from('Produtos', 'p');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
