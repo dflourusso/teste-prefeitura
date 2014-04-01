@@ -1,7 +1,7 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
 $qb->select('p')->from('Produtos', 'p')
-    ->where('p.id > 2');
+    ->where('p.preco > 3');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
