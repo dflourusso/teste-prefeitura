@@ -1,6 +1,6 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
-$qb->select($qb->expr()->max('p.preco'))->from('Produtos', 'p');
+$qb->select($qb->expr()->count('p'))->from('Produtos', 'p');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
