@@ -4,7 +4,8 @@ $qb->select('p')->from('Produtos', 'p')
     ->where('p.preco > :preco')
     ->setParameter('preco', 10)
     ->orWhere('p.preco < :preco1')
-    ->setParameter('preco1', 5);
+    ->setParameter('preco1', 5)
+    ->orderBy('p.preco');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
