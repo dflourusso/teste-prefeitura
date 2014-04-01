@@ -1,24 +1,7 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
-$qb->select('sum(p.preco) as preco, g.descricao as grupo')->from('Produtos', 'p')
-    ->leftJoin('p.grupo', 'g')
-    ->orderBy('p.id')
-    ->groupBy('p.grupo');
+$qb->select($qb->expr()->max('p.preco'))->from('Produtos', 'p');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
-
-echo '<table>';
-foreach ($produtos as $k => $v) {
-    ?>
-    <tr>
-        <td>
-            <?= $v['preco'] ?>
-        </td>
-        <td>
-            <?= $v['grupo'] ?>
-        </td>
-    </tr>
-<?
-}
-echo '</table>';
+var_export($produtos);
