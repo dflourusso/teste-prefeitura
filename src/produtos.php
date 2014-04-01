@@ -1,8 +1,9 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
-$qb->select('p.id, p.descricao, p.preco, g.descricao as grupo')->from('Produtos', 'p')
+$qb->select('sum(p.preco) as preco, g.descricao as grupo')->from('Produtos', 'p')
     ->leftJoin('p.grupo', 'g')
-->orderBy('p.id');
+    ->orderBy('p.id')
+    ->groupBy('p.grupo');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
@@ -11,12 +12,6 @@ echo '<table>';
 foreach ($produtos as $k => $v) {
     ?>
     <tr>
-        <td>
-            <?= $v['id'] ?>
-        </td>
-        <td>
-            <?= $v['descricao'] ?>
-        </td>
         <td>
             <?= $v['preco'] ?>
         </td>
