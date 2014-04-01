@@ -1,11 +1,8 @@
 <?php
 $qb = EM::instance()->createQueryBuilder();
-$qb->select('p')->from('Produtos', 'p')
-    ->where('p.preco > :preco')
-    ->setParameter('preco', 10)
-    ->orWhere('p.preco < :preco1')
-    ->setParameter('preco1', 5)
-    ->orderBy('p.preco', 'desc');
+$qb->select('p.id, p.descricao, p.preco, g.descricao as grupo')->from('Produtos', 'p')
+    ->leftJoin('p.grupo', 'g')
+->orderBy('p.id');
 
 $produtos = $qb->getQuery()->getArrayResult();
 
@@ -22,6 +19,9 @@ foreach ($produtos as $k => $v) {
         </td>
         <td>
             <?= $v['preco'] ?>
+        </td>
+        <td>
+            <?= $v['grupo'] ?>
         </td>
     </tr>
 <?
