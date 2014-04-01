@@ -2,7 +2,9 @@
 $qb = EM::instance()->createQueryBuilder();
 $qb->select('p')->from('Produtos', 'p')
     ->where('p.preco > :preco')
-    ->setParameter('preco', 3);
+    ->setParameter('preco', 3)
+    ->andWhere('p.id < :id')
+    ->setParameter('id', 10);
 
 $produtos = $qb->getQuery()->getArrayResult();
 
