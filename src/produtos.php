@@ -4,5 +4,5 @@ $g = Grupos::find(1);
 $p = $g->getProdutos();
 
 echo "<pre>";
-echo $p->count();
+var_export($p->isEmpty());
 echo '</pre>';
