@@ -28,6 +28,7 @@ $config->setProxyNamespace('Proxies');
 $config->setAutoGenerateProxyClasses(true);
 
 \Doctrine\DBAL\Types\Type::addType('datemesref', '\Types\DateMesRef');
+\Doctrine\DBAL\Types\Type::addType('money', '\Types\Money');
 
 $entityManager = EntityManager::create($dbParams, $config);
 EM::$instance = $entityManager;
