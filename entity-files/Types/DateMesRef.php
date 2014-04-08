@@ -3,7 +3,8 @@
 namespace Types;
 
 use Doctrine\DBAL\Types\DateType,
-    Doctrine\DBAL\Platforms\AbstractPlatform;
+    Doctrine\DBAL\Platforms\AbstractPlatform,
+    DateTime;
 
 /**
  * Class DateMesRef
@@ -31,7 +32,7 @@ class DateMesRef extends DateType
      *
      * @see Doctrine\DBAL\Types.DateType::convertToDatabaseValue()
      *
-     * @param mixed $value
+     * @param DateTime $value
      * @param AbstractPlatform $platform
      *
      * @return string
@@ -42,6 +43,26 @@ class DateMesRef extends DateType
             return $value->format('Y-m-01');
         }
         return null;
+    }
+
+    /**
+     * Obtem a data no formato PHP
+     * @see Doctrine\DBAL\Types.DateType::convertToPHPValue()
+     *
+     * @param string $value
+     * @param AbstractPlatform $platform
+     *
+     * @return DateTime
+     */
+    public function convertToPHPValue($value, AbstractPlatform $platform)
+    {
+        if ($value == null) {
+            return null;
+        }
+
+        $d = new DateTime($value);
+
+        return $d;
     }
 
 } 
