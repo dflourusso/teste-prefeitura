@@ -2,6 +2,8 @@
 
 namespace types;
 
+use Doctrine\DBAL\Types\DateType;
+
 /**
  * Tipo customizado
  *
@@ -9,7 +11,7 @@ namespace types;
  *
  * @package types
  */
-class DateMesRef
+class DateMesRef extends DateType
 {
 
 } 
