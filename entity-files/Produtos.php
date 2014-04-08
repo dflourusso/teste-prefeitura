@@ -31,7 +31,7 @@ class Produtos extends AbstractModel
     protected $descricao;
 
     /**
-     * @Column(type="decimal")
+     * @Column(type="money")
      */
     protected $preco;
 
