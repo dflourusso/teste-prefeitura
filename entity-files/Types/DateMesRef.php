@@ -20,6 +20,7 @@ class DateMesRef extends DateType
 
     /**
      * Obtem o nome do type
+     *
      * @return string
      */
     public function getName()
@@ -32,7 +33,7 @@ class DateMesRef extends DateType
      *
      * @see Doctrine\DBAL\Types.DateType::convertToDatabaseValue()
      *
-     * @param DateTime $value
+     * @param DateTime         $value
      * @param AbstractPlatform $platform
      *
      * @return string
@@ -42,14 +43,16 @@ class DateMesRef extends DateType
         if ($value) {
             return $value->format('Y-m-01');
         }
+
         return null;
     }
 
     /**
      * Obtem a data no formato PHP
+     *
      * @see Doctrine\DBAL\Types.DateType::convertToPHPValue()
      *
-     * @param string $value
+     * @param string           $value
      * @param AbstractPlatform $platform
      *
      * @return DateTime
