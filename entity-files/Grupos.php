@@ -21,7 +21,7 @@ class Grupos extends AbstractModel
 
     /**
      * Data de cadastro
-     * @Column(type="datetime")
+     * @Column(type="datemesref")
      */
     protected $datcad;
 

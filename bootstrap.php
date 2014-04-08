@@ -27,5 +27,7 @@ $config->setProxyDir(__DIR__ .'/entity-files/proxies');
 $config->setProxyNamespace('Proxies');
 $config->setAutoGenerateProxyClasses(true);
 
+\Doctrine\DBAL\Types\Type::addType('datemesref', '\Types\DateMesRef');
+
 $entityManager = EntityManager::create($dbParams, $config);
 EM::$instance = $entityManager;
