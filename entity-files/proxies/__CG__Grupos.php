@@ -64,10 +64,10 @@ class Grupos extends \Grupos implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'datcad', 'descricao', 'produtos');
+            return array('__isInitialized__', 'id', 'datcad', 'mesref', 'descricao', 'produtos');
         }
 
-        return array('__isInitialized__', 'id', 'datcad', 'descricao', 'produtos');
+        return array('__isInitialized__', 'id', 'datcad', 'mesref', 'descricao', 'produtos');
     }
 
     /**
@@ -241,6 +241,28 @@ class Grupos extends \Grupos implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDatcad', array());
 
         return parent::getDatcad();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMesref($mesref)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMesref', array($mesref));
+
+        return parent::setMesref($mesref);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMesref()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMesref', array());
+
+        return parent::getMesref();
     }
 
     /**
